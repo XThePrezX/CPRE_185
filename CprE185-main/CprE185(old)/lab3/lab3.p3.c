@@ -1,0 +1,67 @@
+/* 185 Lab 3 Template */
+
+#include <stdio.h>
+#include <math.h>
+
+/* Put your function prototypes here */
+double mag (double inp1, double inp2, double inp3){
+	double magnitude1;
+	inp1 = pow (inp1,2);
+	inp2 = pow (inp2,2);
+	inp3 = pow (inp3,2);
+	magnitude1 = sqrt(inp1+inp2+inp3);
+	
+	return magnitude1;
+}
+
+
+int minutes (millisecondsTime) {
+	int theMinutes = millisecondsTime/60000;
+	
+	return theMinutes;
+}
+
+int seconds (millisecondsTime) {
+	int theSeconds = millisecondsTime/1000;
+	theSeconds = theSeconds%60;
+	
+	return theSeconds;
+}
+
+int millis (millisecondsTime) {
+	int theMillis = millisecondsTime%60000;
+	theMillis = millisecondsTime%1000;
+	
+	return theMillis;
+}
+
+
+int main(void) {
+    /* DO NOT MODIFY THESE VARIABLE DECLARATIONS */
+    int t;
+    double  ax, ay, az;     
+
+
+    /* This while loop makes your code repeat. Don't get rid of it. */
+    while (1) {
+        scanf("%d,%lf,%lf,%lf", &t, &ax, &ay, &az); 
+
+/* CODE SECTION 0 
+		double TinS;
+		TinS = t * 1000;
+        printf("Echoing output: %8.3f , %7.4f, %7.4f, %7.4f\n", TinS, ax, ay, az);
+*/
+/* CODE SECTION 1 */
+      /*  printf("At %d ms, the acceleration's magnitude was: %lf\n", 
+            t, mag(ax, ay, az));*/
+            
+/* CODE SECTION 2 */
+        printf("At %d minutes, %d seconds, and %d milliseconds it was: %lf\n", 
+        minutes(t), seconds(t), millis(t), mag(ax,ay,az)); 
+
+    }
+
+return 0;
+}
+
+/* Put your functions here */
